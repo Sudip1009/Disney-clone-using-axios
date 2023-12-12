@@ -16,7 +16,7 @@ function Hero() {
 
   const getTrendingMovies =()=>{
     GlobalApi.getTrendingVideos.then(resp=>{
-      console.log(resp.data.results)
+      // console.log(resp.data.results)
       setMovieList(resp.data.results)
     })
   }
