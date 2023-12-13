@@ -6,19 +6,19 @@ function Footer() {
   return (
     <div className='p-5 mt-3'>
         <div className='flex justify-around text-[10px] md:text-[20px] flex-wrap mb-6'>
-        <div className='ml-2 mt-2 '>
+        <div className='ml-2 mt-2'>
             <h2>Company</h2>
-            <p>About Us</p>
-            <p>Careers</p>
+            <p className='text-gray-600'>About Us</p>
+            <p className='text-gray-600'>Careers</p>
         </div>
         <div className='ml-2 mt-4 '>
             <h2>View website in</h2>
-            <div className='flex'><TiTick className='h-[15px] md:h-[30px]'/>English</div>
+            <div className='flex text-gray-600'><TiTick className='h-[15px] md:h-[30px]'/>English</div>
         </div>
         <div className='ml-2 mt-4 '>
             <h2>Need Help?</h2>
-            <p>Visit help center</p>
-            <p>Share feedback</p>
+            <p className='text-gray-600'>Visit help center</p>
+            <p className='text-gray-600'>Share feedback</p>
         </div>
         <div className='ml-2 mt-4 '>
             <h2>Connect with Us</h2>
@@ -28,9 +28,9 @@ function Footer() {
             </div>
         </div>
         </div>
-        <div>
+        <div className='text-[12px] md:text-[20px]'>
             <h2>&copy; 2023 STAR. All Rights Reserve</h2>
-            <span>Terms of use </span>  <span> Privacy Policy</span>  <span> Faq</span>
+            <span>Terms of use</span>  <span>Privacy Policy</span>  <span>Faq</span>
         </div>
     </div>
   )

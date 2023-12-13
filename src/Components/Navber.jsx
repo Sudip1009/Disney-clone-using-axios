@@ -5,8 +5,16 @@ import { RiMovie2Fill } from "react-icons/ri";
 import { PiTelevisionFill } from "react-icons/pi";
 import { HiDotsVertical } from "react-icons/hi";
 
+import { IoHomeSharp } from "react-icons/io5";
+import { PiTelevisionSimpleFill } from "react-icons/pi";
+import { MdOutlineSportsBaseball } from "react-icons/md";
+import  {AiOutlineClose}  from 'react-icons/ai';
+import { FaWallet, FaUserFriends,FaUserAlt } from 'react-icons/fa';
+import { BiLogOut } from 'react-icons/bi';
+
 
 export const Navber = () => {
+  const [nav, setNav] = useState(false)
   const [toggle , setToggle] = useState(false)
   return ( 
     <>
@@ -34,9 +42,28 @@ export const Navber = () => {
       </div>
     </div>
     </div>
-    <FaUserCircle className='text-4xl'/>
+    <FaUserCircle onClick={() => setNav(!nav)} className='text-4xl'/>
     </div>
-    
+          
+    {nav ? <div className='bg-black/30 fixed w-9/12 h-screen z-10 top-0 right-0'></div> : ""}
+
+<div className={nav ? 'bg-black/80 w-[300px] h-[500px] z-10 fixed right-0 top-2 duration-300' : 'bg-black/80 w-[300px] h-[500px] z-10 fixed right-[-100%] top-2 duration-300'}>
+
+  
+  <AiOutlineClose onClick={() => setNav(!nav)} size={30} className='absolute text-white top-4 right-4 cursor-pointer' />
+
+  <nav>
+    <ul className='flex flex-col p-4 text-white'>
+      <li className='w-[100px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><FaUserAlt size={25} className='mr-4' />Profile</li>
+      <li className='w-[100px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><IoHomeSharp size={25} className='mr-4' />Home</li>
+      <li className='w-[120px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><PiTelevisionSimpleFill size={25} className='mr-4' />TV</li>
+      <li className='w-[100px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><FaWallet size={25} className='mr-4' />Movies</li>
+      <li className='w-[100px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><MdOutlineSportsBaseball size={25} className='mr-4' />Sports</li>
+      <li className='w-[160px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><FaUserFriends size={25} className='mr-4' />Categories</li>
+      <li className='w-[120px] text-xl py-4 flex hover:underline decoration-white decoration-2 cursor-pointer'><BiLogOut size={25} className='mr-4' />Log Out</li>
+    </ul>
+  </nav>
+</div>
 
     </>
   )
